@@ -21,8 +21,6 @@ void Renderer::draw()
 		heightmap.emplace(y, std::vector<Vector3>());
 	}
 
-	int maxY{};
-
 	for (auto& vertex : vertices)
 	{
 		int roundedVertexY = std::round(vertex.y);
@@ -34,12 +32,14 @@ void Renderer::draw()
 	int prevY{};
 	for (auto& it : heightmap)
 	{
+		std::string endLines{};
 		int difY{};
 		if ((difY = it.first - prevY) > 0)
 		{
 			prevY = it.first;
 			for (int i = 0; i < difY; i++)
-				std::cout << '\n';
+				endLines.append("\n");
+			std::cout << endLines;
 		}
 
 		std::vector<int> xValues;

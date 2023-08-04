@@ -26,8 +26,8 @@ int main()
     
     while (true)
     {
-        renderer.rotateVertices(0.2, 0.08, 0.1);
-        Sleep(2);
+        renderer.rotateVertices(0.1, 0.08, 0.07);
+        Sleep(5);
         renderer.draw();
     }
 }
